@@ -45,7 +45,7 @@ def filenameify_string(title_string):
 def article_read(article_title, redirect_count=0):
     """
     Return the content at a wikipedia URL after following any wiki redirects
-    The redirect_count argument is used internally during recursive calls
+    * The redirect_count argument is used internally to track recursive calls
     """
     url_opener = urllib2.build_opener()
     url_opener.addheaders = [('User-agent', USER_AGENT)]
@@ -64,7 +64,12 @@ def article_read(article_title, redirect_count=0):
 
 
 def download_article(article_title, output_path=None, allow_overwrite=False):
-    """ Download the contents of the specified URL to the specified file """
+    """
+    Download the contents of the article to the specified file, while honoring
+    these principles:
+    * don't talk to wikipedia until we have a valid output filehandle
+    * don't clobber an existing file if there is a failure
+    """
     performing_overwrite = False
 
     if output_path is None:
