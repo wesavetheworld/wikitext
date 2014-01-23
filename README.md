@@ -2,7 +2,7 @@
 
 A small command-line program that downloads the raw wikipedia markup text for the specified article. It does not download images or other supporting media. It does not follow links.
 
-It is designed as a shortcut to using `curl` or `wget` in situations where you want article **markup**. For example, to get the wikitext for the "Abraham Lincoln" article, you'd normally run `wget 'http://en.wikipedia.org/w/index.php?title=Abraham_Lincoln&action=raw'`; with wikitext, you can instead run `wikitext "Abraham Lincoln"`
+It is designed as a shortcut to using `curl` or `wget` in situations where you want article **markup**. For example, to get the raw markup for the "Abraham Lincoln" article, you'd normally run `wget 'http://en.wikipedia.org/w/index.php?title=Abraham_Lincoln&action=raw'`; with wikitext, you can instead run `wikitext "Abraham Lincoln"`
 
 **This program is not a robot, it is not optimized for large numbers of downloads. Don't abuse wikipedia.**
 
@@ -13,7 +13,7 @@ Specify the plaintext article title.
 	% wikitext "Stochastic optimization"
 	Output written to "Stochastic optimization.txt"
 
-You can specify multiple title. Why not use your shell's builtin globbing?:
+You can specify multiple titles. Why not use your shell's builtin globbing?:
 
 	%  wikitext {Haskell,Erlang}" (programming language)"
 	Output written to "Haskell programming language.txt"
