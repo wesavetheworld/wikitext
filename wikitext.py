@@ -10,9 +10,7 @@ import urllib2
 
 
 WIKITEXT_URL_FMT = 'http://en.wikipedia.org/w/index.php?title={}&action=raw'
-USER_AGENT = ('Mozilla/5.0 '
-              '(Macintosh; Intel Mac OS X 10.9; rv:26.0) '
-              'Gecko/20100101 Firefox/26.0')
+USER_AGENT = 'wikiext/0.x (+https://github.com/glvnst/wikitext)'
 REDIRECT_REGEX = re.compile(r'^\#REDIRECT \[\[(.+?)\]\]$')
 MAX_REDIRECTS = 3
 
